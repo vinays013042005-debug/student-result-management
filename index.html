@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Result Management - Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="main-container">
+
+        <div id="welcome-page" class="page active-page">
+            <h1 class="welcome-heading">Welcome</h1>
+            <div class="selection-buttons">
+                <button onclick="showAdminLogin()">Admin Login</button>
+                <button onclick="showStudentLogin()">Student Login</button>
+            </div>
+        </div>
+
+        <div id="admin-login" class="page hidden-page">
+            <h1 class="welcome-heading red-text">Welcome Admin</h1>
+            <div class="login-box">
+                <div class="user-icon-placeholder"></div>
+                <form id="admin-form">
+                    <label for="admin-username">Username</label>
+                    <input type="text" id="admin-username" required>
+
+                    <label for="admin-password">Password</label>
+                    <input type="password" id="admin-password" required>
+
+                    <div class="form-actions">
+                        <button type="submit">Login</button>
+                        <button type="button" onclick="showWelcomePage()">Back</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div id="student-login" class="page hidden-page">
+            <h1 class="welcome-heading red-text">Welcome Student</h1>
+            <div class="login-box">
+                <div class="university-logo-placeholder"></div>
+                <form id="student-form">
+                    <label for="student-roll-number">Enter roll number</label>
+                    <input type="text" id="student-roll-number" required>
+
+                    <div class="form-actions">
+                        <button type="submit">Search</button>
+                        <button type="button" onclick="showWelcomePage()">Back</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div id="admin-dashboard" class="dashboard hidden-page">
+            <div class="sidebar green-bg">
+                <button id="add-students-btn" onclick="loadContent('add-students')">Add new Students</button>
+                <button id="insert-result-btn" onclick="loadContent('insert-result')">Insert new Result</button>
+                <button id="registered-students-btn" onclick="loadContent('registered-students')">Registered Students</button>
+                <button id="all-results-btn" onclick="loadContent('all-results')">All students Result</button>
+                <button id="logout-btn" onclick="logout()">Logout</button>
+            </div>
+            <div id="main-content" class="content-area lightblue-bg">
+                <h2>Select an option from the sidebar.</h2>
+            </div>
+        </div>
+        
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
